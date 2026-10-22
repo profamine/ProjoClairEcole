@@ -1,7 +1,7 @@
 # ProjoClair École
 
 Site vitrine : maintenance et lampes de vidéoprojecteurs Epson pour les écoles de Marrakech.
-En ligne : https://projoclairecole.vercel.app/ — version arabe : https://projoclairecole.vercel.app/?lang=ar
+En ligne : https://projoclairecole.online/ — version arabe : https://projoclairecole.online/?lang=ar
 
 | Fichier | Rôle |
 |---|---|
@@ -18,4 +18,4 @@ Pour afficher le prix d'une lampe, remplacer `price: null` par le montant en DH 
 
 Chaque `git push` sur `main` redéploie automatiquement le site sur Vercel.
 
-Si l'adresse du site change (nom de domaine `.ma` par exemple), remplacer `projoclairecole.vercel.app` dans `index.html`, `robots.txt`, `sitemap.xml` et `autocollant.html`.
+Si l'adresse du site change, remplacer `projoclairecole.online` dans `index.html`, `robots.txt`, `sitemap.xml` et `autocollant.html`.

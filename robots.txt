@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /autocollant.html
 
-Sitemap: https://projoclairecole.vercel.app/sitemap.xml
+Sitemap: https://projoclairecole.online/sitemap.xml
