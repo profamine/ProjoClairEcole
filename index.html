@@ -1,0 +1,1058 @@
+<!doctype html>
+<html lang="fr" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ProjoClair École — Lampes et maintenance de vidéoprojecteurs Epson à Marrakech</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Maintenance, nettoyage et lampes de vidéoprojecteurs Epson pour les écoles de Marrakech et Al Haouz. Bilan gratuit, intervention sous 48 h, facture fournie. صيانة ومصابيح أجهزة العرض إبسون للمدارس.">
+<meta name="theme-color" content="#0f1724">
+<meta property="og:title" content="ProjoClair École — Vidéoprojecteurs Epson pour les écoles">
+<meta property="og:description" content="Bilan gratuit, nettoyage, lampes Epson et contrat annuel. Marrakech.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Readex+Pro:wght@400;500;700&family=JetBrains+Mono:wght@500;700&display=swap">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "ProjoClair École",
+  "description": "Maintenance et lampes de vidéoprojecteurs Epson pour les écoles",
+  "telephone": "+212657048071",
+  "areaServed": ["Marrakech"],
+  "address": {"@type": "PostalAddress", "addressLocality": "Marrakech", "addressCountry": "MA"},
+  "openingHours": "Mo-Sa 08:30-19:00",
+  "priceRange": "DH"
+}
+</script>
+<style>
+/* Layout: a dark "classroom at the projector" hero with a ceiling-mounted projector beaming onto a screen,
+   then whiteboard-light sections, one column on phones, two on wide screens. */
+:root {
+  --ink: #0f1724;          /* projection room, always dark */
+  --ink-2: #18233a;
+  --paper: #f4f5f1;        /* whiteboard */
+  --surface: #ffffff;
+  --text: #1a2233;
+  --muted: #586276;
+  --line: #dde1d8;
+  --lamp: #ffb020;         /* lamp light */
+  --lamp-soft: #fff1d1;
+  --lamp-deep: #9a5a00;    /* accent text on light */
+  --wa: #179c50;
+  --wa-hover: #12823f;
+  --led-red: #e5484d;
+  --led-green: #2fc26a;
+  --on-ink: #eef1f6;
+  --on-ink-muted: #a9b3c4;
+
+  --f-display: "Bricolage Grotesque", "Readex Pro", system-ui, sans-serif;
+  --f-body: "Readex Pro", system-ui, -apple-system, "Segoe UI", Tahoma, sans-serif;
+  --f-mono: "JetBrains Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
+
+  --r: 14px;
+  --gutter-l: max(16px, env(safe-area-inset-left, 0px));
+  --gutter-r: max(16px, env(safe-area-inset-right, 0px));
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --ink: #0a101a; --ink-2: #131c2d;
+    --paper: #0e141f; --surface: #161f2e; --text: #e7eaf0; --muted: #9ba5b7; --line: #263247;
+    --lamp-soft: #2e2510; --lamp-deep: #ffc456;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --ink: #0a101a; --ink-2: #131c2d;
+  --paper: #0e141f; --surface: #161f2e; --text: #e7eaf0; --muted: #9ba5b7; --line: #263247;
+  --lamp-soft: #2e2510; --lamp-deep: #ffc456;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; background: var(--paper); color: var(--text);
+  font: 400 1rem/1.6 var(--f-body);
+  overflow-x: clip;
+}
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 30; background: var(--ink); }
+html[lang="fr"] .ar, html[lang="ar"] .fr { display: none !important; }
+html[lang="ar"] body { line-height: 1.8; }
+h1, h2, h3 { font-family: var(--f-display); line-height: 1.15; text-wrap: balance; margin: 0; }
+html[lang="ar"] h1, html[lang="ar"] h2, html[lang="ar"] h3 { font-family: var(--f-body); font-weight: 700; line-height: 1.4; }
+p { margin: 0; }
+a { color: inherit; }
+img, svg { max-width: 100%; }
+:focus-visible { outline: 3px solid var(--lamp); outline-offset: 2px; border-radius: 6px; }
+.mono { font-family: var(--f-mono); letter-spacing: 0; }
+.wrap { max-width: 1120px; margin-inline: auto; padding-left: var(--gutter-l); padding-right: var(--gutter-r); }
+.section { padding-block: 64px; }
+.eyebrow { font: 500 .78rem/1.2 var(--f-mono); text-transform: uppercase; letter-spacing: .12em; color: var(--lamp-deep); }
+html[lang="ar"] .eyebrow { font-family: var(--f-body); letter-spacing: 0; font-size: .9rem; }
+.h2 { font-size: clamp(1.7rem, 4.6vw, 2.6rem); font-weight: 800; letter-spacing: -.015em; }
+.lead { color: var(--muted); font-size: 1.08rem; max-width: 62ch; }
+.head { display: grid; gap: 12px; margin-bottom: 32px; }
+
+/* Buttons */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  min-height: 52px; padding: 12px 22px; border-radius: 999px; border: 0; cursor: pointer;
+  font: 700 1rem/1.2 var(--f-body); text-decoration: none; transition: transform .15s, background .15s;
+}
+.btn:active { transform: translateY(1px); }
+.btn svg { width: 22px; height: 22px; flex: none; }
+.btn-wa { background: var(--wa); color: #fff; }
+.btn-wa:hover { background: var(--wa-hover); }
+.btn-lamp { background: var(--lamp); color: #1d1300; }
+.btn-lamp:hover { background: #ffc24d; }
+.btn-ghost { background: transparent; color: inherit; border: 1.5px solid currentColor; }
+.btn-sm { min-height: 44px; padding: 8px 16px; font-size: .92rem; }
+
+/* Top bar */
+.topbar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; background: color-mix(in srgb, var(--ink) 92%, transparent); backdrop-filter: blur(8px); color: var(--on-ink); border-bottom: 1px solid #ffffff14; }
+.topbar .wrap { display: flex; align-items: center; gap: 12px; min-height: 60px; }
+.brand { display: flex; align-items: center; gap: 10px; text-decoration: none; font: 800 1.12rem/1 var(--f-display); letter-spacing: -.01em; white-space: nowrap; }
+.brand b { color: var(--lamp); font-weight: 800; }
+.brand svg { width: 34px; height: 34px; flex: none; }
+.nav { display: none; gap: 22px; margin-inline-start: auto; font-size: .93rem; }
+.nav a { text-decoration: none; color: var(--on-ink-muted); }
+.nav a:hover { color: var(--on-ink); }
+.top-actions { display: flex; align-items: center; gap: 8px; margin-inline-start: auto; }
+.nav + .top-actions { margin-inline-start: 18px; }
+.lang { display: inline-flex; border: 1px solid #ffffff2e; border-radius: 999px; padding: 3px; }
+.lang button { min-height: 38px; min-width: 44px; padding: 0 12px; border: 0; border-radius: 999px; background: transparent; color: var(--on-ink-muted); font: 600 .9rem var(--f-body); cursor: pointer; }
+.lang button[aria-pressed="true"] { background: var(--on-ink); color: var(--ink); }
+.top-wa { width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; background: var(--wa); color: #fff; }
+.top-wa svg { width: 22px; height: 22px; }
+@media (min-width: 900px) { .nav { display: flex; } }
+@media (max-width: 439px) { .top-wa { display: none; } .brand { font-size: 1.02rem; } }
+
+/* Hero */
+.hero { background: radial-gradient(120% 70% at 75% 0%, #ffb02024, transparent 60%), var(--ink); color: var(--on-ink); overflow: hidden; }
+.hero-grid { display: grid; gap: 40px; padding-block: 44px 56px; align-items: center; }
+.hero .eyebrow { color: var(--lamp); }
+.hero h1 { font-size: clamp(2.05rem, 7.4vw, 3.7rem); font-weight: 800; letter-spacing: -.025em; margin-block: 14px 18px; }
+html[lang="ar"] .hero h1 { letter-spacing: 0; font-size: clamp(1.9rem, 7vw, 3.2rem); }
+.hero h1 em { font-style: normal; color: var(--lamp); }
+.hero-sub { color: var(--on-ink-muted); font-size: 1.1rem; max-width: 52ch; }
+.hero-cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+.hero-cta .btn { flex: 1 1 220px; }
+.trust { display: flex; flex-wrap: wrap; gap: 8px 18px; margin: 24px 0 0; padding: 0; list-style: none; color: var(--on-ink); font-size: .93rem; }
+.trust li { display: flex; align-items: center; gap: 8px; }
+.trust li::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--led-green); box-shadow: 0 0 8px var(--led-green); }
+
+.stage { position: relative; max-width: 460px; width: 100%; margin-inline: auto; padding-top: 8px; }
+.mount { width: 4px; height: 22px; background: #3a4660; margin-inline: auto; }
+.projector { position: relative; z-index: 2; width: 190px; margin-inline: auto; }
+.projector svg { display: block; width: 100%; height: auto; direction: ltr; }
+.beam {
+  position: relative; z-index: 1; height: 120px; margin-top: -14px;
+  background: linear-gradient(to bottom, #ffd27a, #ffb02000 95%);
+  clip-path: polygon(44% 0, 56% 0, 100% 100%, 0 100%);
+  opacity: .5; mix-blend-mode: screen;
+  animation: ignite 1.6s ease-out both;
+}
+.screen {
+  position: relative; background: #fbfaf5; color: #1a2233; border-radius: 6px; padding: 22px 22px 18px;
+  box-shadow: 0 0 0 6px #e7e4da, 0 0 70px #ffb02055, 0 30px 60px #00000066;
+  animation: screen-on 1.6s ease-out both;
+}
+.screen-title { font: 700 .95rem var(--f-body); color: #1a2233; }
+.slide { display: grid; grid-template-columns: auto 1fr; gap: 16px; align-items: center; margin-top: 14px; }
+.slide svg { width: 92px; height: 92px; }
+.slide-lines { display: grid; gap: 8px; }
+.slide-lines i { display: block; height: 8px; border-radius: 4px; background: #d9dde4; }
+.slide-lines i:nth-child(1) { width: 92%; } .slide-lines i:nth-child(2) { width: 74%; } .slide-lines i:nth-child(3) { width: 84%; } .slide-lines i:nth-child(4) { width: 52%; }
+.lamp-meter { margin-top: 16px; display: grid; gap: 6px; font: 500 .75rem var(--f-mono); color: #4d5668; }
+.lamp-meter .bar { height: 6px; background: #e6e8ec; border-radius: 3px; overflow: hidden; }
+.lamp-meter .bar span { display: block; height: 100%; width: 21%; background: var(--led-green); border-radius: 3px; }
+.lamp-meter .row { display: flex; justify-content: space-between; gap: 8px; }
+@keyframes ignite { 0% { opacity: 0; } 18% { opacity: .55; } 26% { opacity: .1; } 40% { opacity: .45; } 100% { opacity: .5; } }
+@keyframes screen-on { 0% { filter: brightness(.35); } 26% { filter: brightness(.5); } 100% { filter: brightness(1); } }
+@media (prefers-reduced-motion: reduce) { .beam, .screen { animation: none; } html { scroll-behavior: auto; } }
+@media (min-width: 900px) { .hero-grid { grid-template-columns: 1.15fr .85fr; padding-block: 72px 88px; gap: 56px; } }
+
+/* Problem */
+.problem { background: var(--surface); border-bottom: 1px solid var(--line); }
+.problem-grid { display: grid; gap: 32px; }
+.problem-text { font-size: 1.18rem; max-width: 56ch; }
+.problem-text strong { color: var(--text); font-weight: 700; }
+.leds { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
+.led { display: inline-flex; align-items: center; gap: 8px; padding: 6px 12px; border-radius: 8px; background: var(--ink); color: var(--on-ink); font: 500 .75rem var(--f-mono); letter-spacing: .06em; }
+.led i { width: 9px; height: 9px; border-radius: 50%; background: var(--led-red); box-shadow: 0 0 10px var(--led-red); }
+.led.ok i { background: var(--led-green); box-shadow: 0 0 10px var(--led-green); }
+.led.blink i { animation: blink 1s steps(2, start) infinite; }
+@keyframes blink { to { visibility: hidden; } }
+@media (prefers-reduced-motion: reduce) { .led.blink i { animation: none; } }
+.diag { border: 1px solid var(--line); border-radius: var(--r); padding: 20px; background: var(--paper); }
+.diag-label { font-weight: 700; margin-bottom: 12px; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip { min-height: 44px; padding: 8px 14px; border-radius: 999px; border: 1.5px solid var(--line); background: var(--surface); color: var(--text); font: 500 .93rem var(--f-body); cursor: pointer; text-align: start; }
+.chip:hover { border-color: var(--lamp); }
+.chip[aria-pressed="true"] { background: var(--ink); color: var(--on-ink); border-color: var(--ink); }
+.diag-out { margin-top: 16px; padding: 16px; border-radius: 10px; background: var(--surface); border: 1px solid var(--line); display: grid; gap: 10px; }
+.diag-out dt { font: 500 .72rem var(--f-mono); text-transform: uppercase; letter-spacing: .1em; color: var(--muted); }
+html[lang="ar"] .diag-out dt { font-family: var(--f-body); letter-spacing: 0; font-size: .85rem; }
+.diag-out dl { margin: 0; display: grid; gap: 4px 0; }
+.diag-out dd { margin: 0 0 8px; }
+@media (min-width: 900px) { .problem-grid { grid-template-columns: 1fr 1fr; align-items: start; gap: 56px; } }
+
+/* Services */
+.services { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+.service { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); padding: 24px; display: grid; gap: 10px; align-content: start; }
+.service .ico { width: 52px; height: 52px; border-radius: 12px; display: grid; place-items: center; background: var(--lamp-soft); color: var(--lamp-deep); }
+.service .ico svg { width: 28px; height: 28px; }
+.service h3 { font-size: 1.22rem; font-weight: 800; }
+.service p { color: var(--muted); }
+.service .tag { justify-self: start; font: 700 .74rem var(--f-mono); letter-spacing: .08em; text-transform: uppercase; color: var(--wa); }
+html[lang="ar"] .service .tag { font-family: var(--f-body); letter-spacing: 0; font-size: .85rem; }
+
+/* Lamp finder */
+.finder { background: var(--ink); color: var(--on-ink); }
+.finder .eyebrow { color: var(--lamp); }
+.finder .lead { color: var(--on-ink-muted); }
+.finder-box { background: var(--ink-2); border: 1px solid #ffffff17; border-radius: 18px; padding: 20px; display: grid; gap: 16px; }
+.search { display: flex; align-items: center; gap: 10px; background: #fff; border-radius: 14px; padding: 6px 6px 6px 16px; padding-inline: 16px 6px; }
+.search svg { width: 22px; height: 22px; color: #6b7487; flex: none; }
+.search input { flex: 1; min-width: 0; border: 0; outline: 0; background: transparent; color: #1a2233; font: 700 1.2rem var(--f-mono); padding: 12px 0; text-transform: uppercase; }
+.search input::placeholder { color: #9aa2b1; text-transform: none; font-weight: 500; }
+.search:focus-within { box-shadow: 0 0 0 3px var(--lamp); }
+.quick { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; color: var(--on-ink-muted); font-size: .9rem; }
+.quick button { min-height: 40px; padding: 6px 12px; border-radius: 8px; border: 1px solid #ffffff26; background: transparent; color: var(--on-ink); font: 500 .85rem var(--f-mono); cursor: pointer; }
+.quick button:hover { border-color: var(--lamp); color: var(--lamp); }
+.results { display: grid; gap: 12px; }
+.result { background: #fbfaf5; color: #1a2233; border-radius: 14px; padding: 18px; display: grid; gap: 14px; }
+.result-top { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px 16px; }
+.result-model { font: 700 1.05rem var(--f-mono); }
+.result-model small { font: 400 .85rem var(--f-body); color: #586276; }
+.result-lamp { display: flex; align-items: center; gap: 14px; }
+.result-lamp .bulb { width: 46px; height: 46px; border-radius: 10px; background: #fff1d1; color: #9a5a00; display: grid; place-items: center; flex: none; }
+.result-lamp .bulb svg { width: 26px; height: 26px; }
+.result-ref { font: 700 1.35rem var(--f-mono); line-height: 1.2; }
+.result-ref small { display: block; font: 500 .78rem var(--f-mono); color: #586276; }
+.result-bottom { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; border-top: 1px dashed #d4d7dd; padding-top: 14px; }
+.price { font: 800 1.5rem var(--f-display); }
+.price small { font: 400 .85rem var(--f-body); color: #586276; }
+.result.laser .bulb { background: #e3f6ea; color: #12823f; }
+.empty { background: #ffffff0d; border: 1px dashed #ffffff33; border-radius: 14px; padding: 18px; display: grid; gap: 12px; color: var(--on-ink); }
+.finder-note { font-size: .88rem; color: var(--on-ink-muted); }
+.catalog summary { cursor: pointer; color: var(--lamp); font-weight: 600; min-height: 44px; display: flex; align-items: center; }
+.catalog-list { display: grid; gap: 14px; margin-top: 10px; }
+.catalog-row { display: grid; gap: 6px; }
+.catalog-row b { font: 700 .9rem var(--f-mono); color: var(--lamp); }
+.catalog-row div { display: flex; flex-wrap: wrap; gap: 6px; }
+.catalog-row button { min-height: 36px; padding: 4px 9px; border-radius: 6px; border: 1px solid #ffffff1f; background: transparent; color: var(--on-ink-muted); font: 500 .8rem var(--f-mono); cursor: pointer; }
+.catalog-row button:hover { color: var(--on-ink); border-color: #ffffff55; }
+.finder-grid { display: grid; gap: 28px; }
+.hero-grid > *, .problem-grid > *, .finder-grid > *, .pricing-grid > *, .ref-grid > *, .contact-grid > * { min-width: 0; }
+@media (min-width: 900px) { .finder-grid { grid-template-columns: .8fr 1.2fr; align-items: start; gap: 56px; } }
+
+/* Pricing */
+.prices { display: grid; gap: 0; background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); overflow: hidden; }
+.price-row { display: grid; grid-template-columns: 1fr auto; gap: 4px 16px; align-items: baseline; padding: 20px; border-bottom: 1px solid var(--line); }
+.price-row:last-child { border-bottom: 0; }
+.price-row h3 { font-size: 1.1rem; font-weight: 700; font-family: var(--f-body); }
+.price-row p { grid-column: 1 / -1; color: var(--muted); font-size: .93rem; }
+.from { text-align: end; white-space: nowrap; }
+.from small { display: block; font-size: .78rem; color: var(--muted); }
+.from strong { font: 800 1.45rem var(--f-display); font-variant-numeric: tabular-nums; }
+.from .free { color: var(--wa); }
+.pricing-grid { display: grid; gap: 24px; }
+.calc { background: var(--lamp-soft); border-radius: var(--r); padding: 24px; display: grid; gap: 16px; align-content: start; }
+.calc h3 { font-size: 1.3rem; font-weight: 800; }
+.calc label { font-weight: 600; display: flex; justify-content: space-between; gap: 12px; align-items: baseline; }
+.calc output.count { font: 800 1.6rem var(--f-display); font-variant-numeric: tabular-nums; }
+.calc input[type=range] { width: 100%; accent-color: var(--lamp-deep); min-height: 44px; }
+.calc-total { display: grid; gap: 2px; }
+.calc-total strong { font: 800 clamp(2rem, 8vw, 2.6rem) var(--f-display); font-variant-numeric: tabular-nums; line-height: 1.1; }
+.calc-total span { color: var(--muted); }
+.calc ul { margin: 0; padding-inline-start: 20px; color: var(--text); display: grid; gap: 4px; font-size: .95rem; }
+.small-note { font-size: .85rem; color: var(--muted); }
+@media (min-width: 900px) { .pricing-grid { grid-template-columns: 1.1fr .9fr; } }
+
+/* Steps */
+.steps { display: grid; gap: 16px; counter-reset: step; list-style: none; margin: 0; padding: 0; }
+.step { position: relative; display: grid; grid-template-columns: auto 1fr; gap: 16px; align-items: start; }
+.step-n { width: 48px; height: 48px; border-radius: 50%; display: grid; place-items: center; background: var(--ink); color: var(--lamp); font: 700 1.1rem var(--f-mono); }
+.step h3 { font-size: 1.15rem; font-weight: 800; margin-bottom: 4px; }
+.step p { color: var(--muted); }
+@media (min-width: 900px) {
+  .steps { grid-template-columns: repeat(3, 1fr); gap: 32px; }
+  .step { grid-template-columns: 1fr; }
+  .step:not(:last-child)::after { content: ""; position: absolute; top: 24px; inset-inline-start: 64px; inset-inline-end: -16px; border-top: 2px dashed var(--line); }
+}
+
+/* Guarantees */
+.guarantees { background: var(--surface); border-block: 1px solid var(--line); }
+.g-grid { display: grid; gap: 24px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+.g { display: grid; gap: 8px; align-content: start; }
+.g svg { width: 34px; height: 34px; color: var(--wa); }
+.g h3 { font-size: 1.1rem; font-weight: 800; }
+.g p { color: var(--muted); }
+
+/* References */
+.ref-grid { display: grid; gap: 24px; align-items: center; }
+.tag-card { justify-self: center; width: min(100%, 330px); background: #fffdf6; color: #1a2233; border-radius: 12px; padding: 18px; box-shadow: 0 1px 0 #00000010, 0 18px 40px #0f172422; transform: rotate(-2deg); display: grid; grid-template-columns: auto 1fr; gap: 14px; align-items: center; border: 1px solid #e8e2cf; }
+.tag-card .qr { width: 86px; height: 86px; background: #1a2233; border-radius: 6px; padding: 8px; }
+.tag-card .qr svg { width: 100%; height: 100%; display: block; }
+.tag-card b { display: block; font: 800 1rem var(--f-display); }
+.tag-card span { display: block; font-size: .85rem; }
+.tag-card .fill { font: 500 .78rem var(--f-mono); color: #586276; margin-top: 6px; }
+.testimonials { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); margin-top: 32px; }
+.quote { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); padding: 22px; margin: 0; display: grid; gap: 12px; }
+.quote footer { color: var(--muted); font-size: .9rem; }
+.logos { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
+.logos span { padding: 10px 16px; border-radius: 10px; border: 1px solid var(--line); background: var(--surface); font-weight: 600; }
+@media (min-width: 900px) { .ref-grid { grid-template-columns: 1.2fr .8fr; } }
+
+/* Contact */
+.contact { background: var(--ink); color: var(--on-ink); }
+.contact .eyebrow { color: var(--lamp); }
+.contact .lead { color: var(--on-ink-muted); }
+.contact-grid { display: grid; gap: 32px; }
+form.card { background: var(--surface); color: var(--text); border-radius: 18px; padding: 22px; display: grid; gap: 16px; }
+.field { display: grid; gap: 6px; }
+.field label { font-weight: 600; font-size: .95rem; }
+.field input, .field textarea { width: 100%; min-height: 50px; padding: 12px 14px; border: 1.5px solid var(--line); border-radius: 10px; background: var(--paper); color: var(--text); font: 400 1rem var(--f-body); }
+.field textarea { min-height: 90px; resize: vertical; }
+.field input:focus, .field textarea:focus { outline: 0; border-color: var(--lamp-deep); box-shadow: 0 0 0 3px #ffb02040; }
+.field input[aria-invalid="true"] { border-color: var(--led-red); }
+.err { color: var(--led-red); font-size: .85rem; min-height: 0; }
+.row2 { display: grid; gap: 16px; grid-template-columns: 1fr; }
+@media (min-width: 560px) { .row2 { grid-template-columns: 1fr 1fr; } }
+.form-ready { border-radius: 12px; padding: 16px; background: #179c5014; border: 1px solid #179c5055; display: grid; gap: 12px; }
+.direct { display: grid; gap: 14px; align-content: start; }
+.direct .big-phone { font: 700 clamp(1.5rem, 6vw, 2rem) var(--f-mono); color: var(--on-ink); user-select: all; direction: ltr; unicode-bidi: isolate; }
+.direct ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; color: var(--on-ink-muted); }
+.direct li strong { color: var(--on-ink); }
+@media (min-width: 900px) { .contact-grid { grid-template-columns: .8fr 1.2fr; gap: 56px; } }
+
+/* Footer */
+footer.site { background: #0a0f18; color: #b9c1cf; padding-block: 40px calc(96px + env(safe-area-inset-bottom, 0px)); font-size: .93rem; }
+.foot-grid { display: grid; gap: 28px; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+.foot-grid h3 { font: 700 .8rem var(--f-mono); letter-spacing: .1em; text-transform: uppercase; color: #fff; margin-bottom: 10px; }
+html[lang="ar"] .foot-grid h3 { font-family: var(--f-body); letter-spacing: 0; font-size: .95rem; }
+.foot-grid p + p { margin-top: 4px; }
+.ltr { direction: ltr; unicode-bidi: isolate; }
+.copy { margin-top: 32px; padding-top: 20px; border-top: 1px solid #ffffff14; color: #7e889a; font-size: .85rem; }
+
+/* Floating WhatsApp */
+.fab {
+  position: fixed; z-index: 25; width: 60px; height: 60px; border-radius: 50%;
+  inset-block-end: calc(18px + env(safe-area-inset-bottom, 0px));
+  inset-inline-end: max(18px, env(safe-area-inset-right, 0px));
+  background: var(--wa); color: #fff; display: grid; place-items: center;
+  box-shadow: 0 10px 28px #0b5a2c66;
+}
+html[dir="rtl"] .fab { inset-inline-end: max(18px, env(safe-area-inset-left, 0px)); }
+.fab svg { width: 32px; height: 32px; }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.9-4.45 9.9-9.91A9.86 9.86 0 0 0 12.04 2zm0 18.15h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.22 8.22 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24a8.2 8.2 0 0 1 8.24 8.25c0 4.54-3.7 8.23-8.24 8.23zm4.52-6.16c-.25-.12-1.46-.72-1.69-.81-.23-.08-.39-.12-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.15.17-.25.25-.42.08-.17.04-.31-.02-.43-.06-.13-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.86.85-.86 2.07s.89 2.4 1.01 2.56c.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.46-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.29z"/></symbol>
+  <symbol id="i-bulb" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.6 10.8c.6.5 1 1.2 1 2V16h5.2v-.2c0-.8.4-1.5 1-2A6 6 0 0 0 12 3z"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><path d="m20 20-3.5-3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 3 4 6v6c0 4.5 3.4 8.2 8 9 4.6-.8 8-4.5 8-9V6l-8-3z"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="m8.5 12 2.5 2.5 4.5-5"/></symbol>
+</svg>
+
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="#accueil" aria-label="ProjoClair École">
+      <svg viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="10" fill="#ffb020"/><rect x="8" y="11" width="24" height="12" rx="3" fill="#0f1724"/><circle cx="25" cy="17" r="3.4" fill="#ffb020"/><circle cx="12.5" cy="15" r="1.2" fill="#2fc26a"/><path d="M21 23 14 33h18l-5-10z" fill="#0f1724" opacity=".28"/></svg>
+      <span>ProjoClair <b>École</b></span>
+    </a>
+    <nav class="nav" aria-label="Sections">
+      <a href="#services"><span class="fr">Services</span><span class="ar">الخدمات</span></a>
+      <a href="#lampes"><span class="fr">Lampes</span><span class="ar">المصابيح</span></a>
+      <a href="#tarifs"><span class="fr">Tarifs</span><span class="ar">الأسعار</span></a>
+      <a href="#contact"><span class="fr">Contact</span><span class="ar">اتصل بنا</span></a>
+    </nav>
+    <div class="top-actions">
+      <div class="lang" role="group" aria-label="Langue / اللغة">
+        <button type="button" data-lang="fr" aria-pressed="true">FR</button>
+        <button type="button" data-lang="ar" aria-pressed="false" lang="ar">عربي</button>
+      </div>
+      <a class="top-wa" data-wa="general" href="https://wa.me/212657048071" target="_blank" rel="noopener" aria-label="WhatsApp"><svg><use href="#i-wa"/></svg></a>
+    </div>
+  </div>
+</header>
+
+<main>
+<!-- 1. En-tête -->
+<section class="hero" id="accueil">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow"><span class="fr">Marrakech</span><span class="ar">مراكش</span></p>
+      <h1>
+        <span class="fr">Maintenance et lampes de vidéoprojecteurs <em>Epson</em> pour les écoles</span>
+        <span class="ar">صيانة ومصابيح أجهزة العرض <em>إبسون</em> للمدارس</span>
+      </h1>
+      <p class="hero-sub">
+        <span class="fr">Une image nette dans chaque classe. Nous nettoyons, réparons et changeons les lampes sur place, avec facture.</span>
+        <span class="ar">صورة واضحة في كل قسم. ننظف ونصلح ونستبدل المصابيح في عين المكان، مع فاتورة.</span>
+      </p>
+      <div class="hero-cta">
+        <a class="btn btn-wa" data-wa="general" href="https://wa.me/212657048071" target="_blank" rel="noopener">
+          <svg><use href="#i-wa"/></svg><span class="fr">Écrire sur WhatsApp</span><span class="ar">راسلونا على واتساب</span>
+        </a>
+        <a class="btn btn-lamp" href="#contact" data-bilan>
+          <span class="fr">Demander un bilan gratuit</span><span class="ar">اطلبوا فحصا مجانيا</span>
+        </a>
+      </div>
+      <ul class="trust">
+        <li><span class="fr">Bilan gratuit</span><span class="ar">فحص مجاني</span></li>
+        <li><span class="fr">Intervention sous 48 h</span><span class="ar">تدخل خلال 48 ساعة</span></li>
+        <li><span class="fr">Facture fournie</span><span class="ar">فاتورة رسمية</span></li>
+      </ul>
+    </div>
+
+    <div class="stage" aria-hidden="true">
+      <div class="mount"></div>
+      <div class="projector">
+        <svg viewBox="0 0 190 70">
+          <rect x="4" y="6" width="182" height="54" rx="12" fill="#e9ecf1"/>
+          <rect x="4" y="44" width="182" height="16" rx="8" fill="#cfd4dc"/>
+          <circle cx="95" cy="40" r="17" fill="#2a3346"/>
+          <circle cx="95" cy="40" r="11" fill="#ffd27a"/>
+          <circle cx="95" cy="40" r="5" fill="#fff6dd"/>
+          <g font-family="JetBrains Mono, monospace" font-size="6.5" fill="#6b7487" letter-spacing=".5">
+            <circle cx="22" cy="20" r="3" fill="#2fc26a"/><text x="28" y="22.5">POWER</text>
+            <circle cx="140" cy="20" r="3" fill="#2fc26a"/><text x="146" y="22.5">LAMP</text>
+            <circle cx="140" cy="31" r="3" fill="#2fc26a"/><text x="146" y="33.5">TEMP</text>
+          </g>
+          <text x="22" y="36" font-family="Bricolage Grotesque, sans-serif" font-weight="800" font-size="9" fill="#9aa2b1">EPSON</text>
+        </svg>
+      </div>
+      <div class="beam"></div>
+      <div class="screen">
+        <p class="screen-title"><span class="fr">Leçon 4 · Le cycle de l'eau</span><span class="ar">الدرس 4 · دورة الماء</span></p>
+        <div class="slide">
+          <svg viewBox="0 0 92 92">
+            <circle cx="66" cy="22" r="13" fill="#ffb020"/>
+            <path d="M14 46c0-8 6-13 13-13 3-7 15-8 19 0 7 0 11 5 11 11 0 5-4 9-9 9H22c-5 0-8-3-8-7z" fill="#b9c6da"/>
+            <path d="M26 60l-3 8M38 60l-3 8M50 60l-3 8" stroke="#3d7fe0" stroke-width="3" stroke-linecap="round"/>
+            <path d="M6 84c12-8 22-8 34 0s24 8 46-2v10H6z" fill="#3d7fe0" opacity=".8"/>
+          </svg>
+          <div class="slide-lines"><i></i><i></i><i></i><i></i></div>
+        </div>
+        <div class="lamp-meter">
+          <div class="row"><span>LAMP · ELPLP96</span><span>1 260 / 6 000 h</span></div>
+          <div class="bar"><span></span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 2. Le problème -->
+<section class="problem section" id="probleme">
+  <div class="wrap problem-grid">
+    <div class="head" style="margin:0">
+      <p class="eyebrow"><span class="fr">Ça vous parle ?</span><span class="ar">هل يحدث هذا عندكم؟</span></p>
+      <h2 class="h2"><span class="fr">Un projecteur fatigué, c'est un cours raté.</span><span class="ar">جهاز عرض متعب يعني حصة ضائعة.</span></h2>
+      <p class="problem-text lead">
+        <span class="fr">L'image est <strong>sombre et jaunâtre</strong>, les élèves du fond ne lisent plus. Le projecteur <strong>s'éteint en plein cours</strong>. Le <strong>voyant lampe passe au rouge</strong> et personne ne sait quelle pièce commander.</span>
+        <span class="ar">الصورة <strong>باهتة ومصفرة</strong> وتلاميذ الصفوف الخلفية لا يرون. الجهاز <strong>ينطفئ في وسط الحصة</strong>. <strong>ضوء المصباح يصبح أحمر</strong> ولا أحد يعرف أي قطعة يطلب.</span>
+      </p>
+      <div class="leds" aria-hidden="true">
+        <span class="led blink"><i></i>LAMP</span>
+        <span class="led"><i></i>TEMP</span>
+        <span class="led ok"><i></i>POWER</span>
+      </div>
+    </div>
+    <div class="diag">
+      <p class="diag-label"><span class="fr">Touchez ce que vous voyez :</span><span class="ar">اختاروا ما تلاحظونه:</span></p>
+      <div class="chips" id="chips"></div>
+      <div class="diag-out" id="diag-out" aria-live="polite"></div>
+    </div>
+  </div>
+</section>
+
+<!-- 3. Services -->
+<section class="section" id="services">
+  <div class="wrap">
+    <div class="head">
+      <p class="eyebrow"><span class="fr">Nos services</span><span class="ar">خدماتنا</span></p>
+      <h2 class="h2"><span class="fr">Tout ce qu'il faut pour des projecteurs qui tiennent l'année.</span><span class="ar">كل ما تحتاجه أجهزتكم لتعمل طوال السنة.</span></h2>
+    </div>
+    <div class="services">
+      <article class="service">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V3h6v1M9 12l2 2 4-4"/></svg></div>
+        <span class="tag"><span class="fr">Gratuit</span><span class="ar">مجاني</span></span>
+        <h3><span class="fr">Bilan gratuit</span><span class="ar">فحص مجاني</span></h3>
+        <p><span class="fr">On passe dans votre école, on teste chaque projecteur et on relève les heures de lampe. Sans engagement.</span><span class="ar">نزور مدرستكم ونختبر كل جهاز ونسجل ساعات المصباح. بدون أي التزام.</span></p>
+      </article>
+      <article class="service">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <h3><span class="fr">Nettoyage et entretien</span><span class="ar">التنظيف والصيانة</span></h3>
+        <p><span class="fr">Filtre, optique, ventilation : l'image retrouve sa luminosité et l'appareil ne chauffe plus.</span><span class="ar">الفلتر والعدسة والتهوية: تعود الصورة واضحة ولا يسخن الجهاز.</span></p>
+      </article>
+      <article class="service">
+        <div class="ico"><svg><use href="#i-bulb"/></svg></div>
+        <h3><span class="fr">Remplacement de lampes</span><span class="ar">استبدال المصابيح</span></h3>
+        <p><span class="fr">La lampe adaptée à votre modèle, posée et testée sur place, compteur remis à zéro.</span><span class="ar">المصباح المناسب لطراز جهازكم، يركب ويختبر في عين المكان مع إعادة العداد إلى الصفر.</span></p>
+      </article>
+      <article class="service">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4M9 15l2 2 4-4"/></svg></div>
+        <h3><span class="fr">Contrat de maintenance annuel</span><span class="ar">عقد صيانة سنوي</span></h3>
+        <p><span class="fr">Deux visites par an, priorité en cas de panne, un rapport par salle. Un budget fixe et connu d'avance.</span><span class="ar">زيارتان في السنة، أولوية عند العطل، وتقرير لكل قسم. ميزانية ثابتة ومعروفة مسبقا.</span></p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- 4. Recherche de lampe -->
+<section class="finder section" id="lampes">
+  <div class="wrap finder-grid">
+    <div class="head" style="margin:0">
+      <p class="eyebrow"><span class="fr">Lampes Epson</span><span class="ar">مصابيح إبسون</span></p>
+      <h2 class="h2"><span class="fr">Trouvez la lampe de votre projecteur</span><span class="ar">اعثروا على مصباح جهازكم</span></h2>
+      <p class="lead"><span class="fr">Tapez le modèle écrit sur le dessus du projecteur, par exemple <span class="mono">EB-X41</span>. Vous voyez tout de suite la référence de lampe compatible.</span><span class="ar">اكتبوا الطراز المكتوب فوق الجهاز، مثلا <span class="mono">EB-X41</span>، لتظهر لكم مباشرة مرجعية المصباح المناسب.</span></p>
+      <p class="finder-note"><span class="fr">Vous ne trouvez pas le modèle ? Sous l'appareil, une étiquette porte aussi un code du type <span class="mono">H839B</span>. Envoyez-nous une photo sur WhatsApp.</span><span class="ar">لم تجدوا الطراز؟ تحت الجهاز ملصق يحمل رمزا مثل <span class="mono">H839B</span>. أرسلوا لنا صورته على واتساب.</span></p>
+    </div>
+    <div class="finder-box">
+      <label class="sr" for="q"><span class="fr">Modèle du projecteur</span><span class="ar">طراز الجهاز</span></label>
+      <div class="search">
+        <svg><use href="#i-search"/></svg>
+        <input id="q" type="search" inputmode="text" autocomplete="off" autocapitalize="characters" spellcheck="false" value="EB-X41" data-ph-fr="Modèle, ex. EB-X41" data-ph-ar="الطراز، مثال EB-X41" placeholder="Modèle, ex. EB-X41">
+      </div>
+      <div class="quick" id="quick"><span class="fr">Les plus courants :</span><span class="ar">الأكثر انتشارا:</span></div>
+      <div class="results" id="results" aria-live="polite"></div>
+      <details class="catalog">
+        <summary id="catalog-sum"></summary>
+        <div class="catalog-list" id="catalog"></div>
+      </details>
+      <p class="finder-note"><span class="fr">Compatibilité vérifiée avec vous avant toute commande. Lampe d'origine ou compatible de qualité, au choix.</span><span class="ar">نتأكد معكم من التوافق قبل أي طلب. مصباح أصلي أو بديل عالي الجودة حسب اختياركم.</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- 5. Tarifs -->
+<section class="section" id="tarifs">
+  <div class="wrap">
+    <div class="head">
+      <p class="eyebrow"><span class="fr">Tarifs indicatifs</span><span class="ar">أسعار تقريبية</span></p>
+      <h2 class="h2"><span class="fr">Un budget clair avant de commencer.</span><span class="ar">ميزانية واضحة قبل البدء.</span></h2>
+    </div>
+    <div class="pricing-grid">
+      <div class="prices">
+        <div class="price-row">
+          <h3><span class="fr">Bilan de vos projecteurs</span><span class="ar">فحص أجهزتكم</span></h3>
+          <div class="from"><strong class="free"><span class="fr">Gratuit</span><span class="ar">مجاني</span></strong></div>
+          <p><span class="fr">Test de chaque appareil, heures de lampe, rapport écrit.</span><span class="ar">اختبار كل جهاز وساعات المصباح وتقرير مكتوب.</span></p>
+        </div>
+        <div class="price-row">
+          <h3><span class="fr">Nettoyage complet</span><span class="ar">تنظيف كامل</span></h3>
+          <div class="from"><small><span class="fr">à partir de</span><span class="ar">ابتداء من</span></small><strong><span data-cfg="priceCleaning">150</span> <span class="fr">DH</span><span class="ar">درهم</span></strong></div>
+          <p><span class="fr">Par projecteur. Filtre, optique, ventilation, test de luminosité.</span><span class="ar">للجهاز الواحد. الفلتر والعدسة والتهوية واختبار الإضاءة.</span></p>
+        </div>
+        <div class="price-row">
+          <h3><span class="fr">Lampe posée</span><span class="ar">مصباح مع التركيب</span></h3>
+          <div class="from"><small><span class="fr">à partir de</span><span class="ar">ابتداء من</span></small><strong><span data-cfg="priceLamp">650</span> <span class="fr">DH</span><span class="ar">درهم</span></strong></div>
+          <p><span class="fr">Selon le modèle. Pose, test et remise à zéro du compteur inclus.</span><span class="ar">حسب الطراز. التركيب والاختبار وإعادة العداد مشمولة.</span></p>
+        </div>
+        <div class="price-row">
+          <h3><span class="fr">Contrat annuel</span><span class="ar">عقد سنوي</span></h3>
+          <div class="from"><small><span class="fr">à partir de</span><span class="ar">ابتداء من</span></small><strong><span data-cfg="priceContract">300</span> <span class="fr">DH</span><span class="ar">درهم</span></strong></div>
+          <p><span class="fr">Par projecteur et par an. Deux nettoyages, suivi des lampes, priorité.</span><span class="ar">للجهاز في السنة. تنظيفان، تتبع المصابيح، وأولوية في التدخل.</span></p>
+        </div>
+      </div>
+
+      <div class="calc">
+        <h3><span class="fr">Estimez votre contrat</span><span class="ar">قدروا تكلفة عقدكم</span></h3>
+        <label for="n"><span><span class="fr">Nombre de projecteurs</span><span class="ar">عدد الأجهزة</span></span><output class="count" id="n-out" for="n">12</output></label>
+        <input id="n" type="range" min="1" max="60" value="12">
+        <div class="calc-total" aria-live="polite">
+          <strong id="calc-year">3 240 DH</strong>
+          <span id="calc-detail"></span>
+        </div>
+        <ul>
+          <li><span class="fr">2 visites de nettoyage par an</span><span class="ar">زيارتان للتنظيف في السنة</span></li>
+          <li><span class="fr">Suivi des heures de chaque lampe</span><span class="ar">تتبع ساعات كل مصباح</span></li>
+          <li><span class="fr">Intervention prioritaire en cas de panne</span><span class="ar">تدخل ذو أولوية عند العطل</span></li>
+          <li><span class="fr">Rapport par salle après chaque visite</span><span class="ar">تقرير لكل قسم بعد كل زيارة</span></li>
+        </ul>
+        <a class="btn btn-wa" id="calc-wa" href="https://wa.me/212657048071" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg><span class="fr">Recevoir ce devis</span><span class="ar">احصلوا على هذا العرض</span></a>
+        <p class="small-note"><span class="fr">Prix indicatifs, hors pièces. Le prix final figure sur le devis remis après le bilan.</span><span class="ar">أسعار تقريبية بدون قطع الغيار. الثمن النهائي يحدد في عرض الأسعار بعد الفحص.</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 6. Comment ça marche -->
+<section class="section" id="etapes" style="padding-top:0">
+  <div class="wrap">
+    <div class="head">
+      <p class="eyebrow"><span class="fr">Comment ça marche</span><span class="ar">كيف نعمل</span></p>
+      <h2 class="h2"><span class="fr">Trois étapes, aucune surprise.</span><span class="ar">ثلاث خطوات، بدون مفاجآت.</span></h2>
+    </div>
+    <ol class="steps">
+      <li class="step">
+        <span class="step-n">1</span>
+        <div><h3><span class="fr">Bilan gratuit</span><span class="ar">فحص مجاني</span></h3>
+        <p><span class="fr">Nous venons tester vos projecteurs, salle par salle.</span><span class="ar">نأتي لاختبار أجهزتكم قسما بقسم.</span></p></div>
+      </li>
+      <li class="step">
+        <span class="step-n">2</span>
+        <div><h3><span class="fr">Rapport et devis</span><span class="ar">تقرير وعرض أسعار</span></h3>
+        <p><span class="fr">Vous recevez l'état de chaque appareil et un devis clair. Vous décidez.</span><span class="ar">تتوصلون بحالة كل جهاز وعرض أسعار واضح. والقرار لكم.</span></p></div>
+      </li>
+      <li class="step">
+        <span class="step-n">3</span>
+        <div><h3><span class="fr">Intervention</span><span class="ar">التدخل</span></h3>
+        <p><span class="fr">Nous intervenons au moment qui vous arrange, en dehors des cours si vous le souhaitez.</span><span class="ar">نتدخل في الوقت الذي يناسبكم، خارج أوقات الدراسة إن رغبتم.</span></p></div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- 7. Garanties -->
+<section class="guarantees section" id="garanties">
+  <div class="wrap">
+    <div class="head">
+      <p class="eyebrow"><span class="fr">Nos garanties</span><span class="ar">ضماناتنا</span></p>
+      <h2 class="h2"><span class="fr">Ce sur quoi vous pouvez compter.</span><span class="ar">ما يمكنكم الاعتماد عليه.</span></h2>
+    </div>
+    <div class="g-grid">
+      <div class="g"><svg><use href="#i-check"/></svg>
+        <h3><span class="fr">Lampes garanties <span data-cfg="lampWarrantyMonths">6</span> mois</span><span class="ar">مصابيح مضمونة <span data-cfg="lampWarrantyMonths">6</span> أشهر</span></h3>
+        <p><span class="fr">Si la lampe faiblit pendant la garantie, nous la remplaçons.</span><span class="ar">إذا ضعف المصباح خلال مدة الضمان نستبدله.</span></p></div>
+      <div class="g"><svg><use href="#i-check"/></svg>
+        <h3><span class="fr">Intervention rapide</span><span class="ar">تدخل سريع</span></h3>
+        <p><span class="fr">Sous 48 h à Marrakech.</span><span class="ar">خلال 48 ساعة في مراكش وإقليم  .</span></p></div>
+      <div class="g"><svg><use href="#i-check"/></svg>
+        <h3><span class="fr">Facture fournie</span><span class="ar">فاتورة رسمية</span></h3>
+        <p><span class="fr">Facture et rapport écrit pour votre comptabilité et vos dossiers.</span><span class="ar">فاتورة وتقرير مكتوب لمحاسبتكم وملفاتكم.</span></p></div>
+      <div class="g"><svg><use href="#i-check"/></svg>
+        <h3><span class="fr">Devis avant travaux</span><span class="ar">عرض أسعار قبل أي عمل</span></h3>
+        <p><span class="fr">Aucune pièce changée sans votre accord écrit.</span><span class="ar">لا نغير أي قطعة دون موافقتكم.</span></p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 8. Références -->
+<section class="section" id="references">
+  <div class="wrap">
+    <div class="ref-grid">
+      <div class="head" style="margin:0">
+        <p class="eyebrow"><span class="fr">Suivi visible</span><span class="ar">متابعة واضحة</span></p>
+        <h2 class="h2"><span class="fr">Chaque projecteur entretenu porte son étiquette.</span><span class="ar">كل جهاز نصونه يحمل ملصقه.</span></h2>
+        <p class="lead"><span class="fr">Date du dernier entretien, prochain passage, et un QR code : un enseignant le scanne et nous écrit directement en cas de souci.</span><span class="ar">تاريخ آخر صيانة والموعد القادم ورمز QR: يمسحه الأستاذ ويراسلنا مباشرة عند أي مشكل.</span></p>
+        <div class="logos" id="logos" hidden></div>
+      </div>
+      <div class="tag-card" aria-hidden="true">
+        <div class="qr"><svg viewBox="0 0 21 21" shape-rendering="crispEdges"><path fill="#fff" d="M0 0h7v7H0zM14 0h7v7h-7zM0 14h7v7H0z"/><path fill="#1a2233" d="M1 1h5v5H1zM15 1h5v5h-5zM1 15h5v5H1z"/><path fill="#fff" d="M2 2h3v3H2zM16 2h3v3h-3zM2 16h3v3H2zM8 1h1v2H8zM10 0h2v1h-2zM9 4h2v2H9zM12 3h1v3h-1zM8 8h3v1H8zM12 8h2v2h-2zM15 8h1v1h-1zM17 9h3v1h-3zM0 8h2v1H0zM3 9h2v2H3zM8 10h1v3H8zM10 11h2v1h-2zM14 11h2v2h-2zM18 11h2v2h-2zM9 14h2v2H9zM12 13h1v3h-1zM14 15h3v1h-3zM18 14h2v1h-2zM8 17h2v2H8zM11 18h3v1h-3zM15 17h1v3h-1zM17 18h3v2h-3zM13 20h1v1h-1z"/></svg></div>
+        <div>
+          <b>ProjoClair École</b>
+          <span class="fr">Entretien : scannez-moi</span><span class="ar">صيانة: امسحوا الرمز</span>
+          <span class="fill">LAST: 14/10/2026 · NEXT: 04/2027</span>
+        </div>
+      </div>
+    </div>
+    <div class="testimonials" id="testimonials" hidden></div>
+  </div>
+</section>
+
+<!-- 9. Contact -->
+<section class="contact section" id="contact">
+  <div class="wrap contact-grid">
+    <div class="direct">
+      <p class="eyebrow"><span class="fr">Contact</span><span class="ar">اتصلوا بنا</span></p>
+      <h2 class="h2"><span class="fr">Demandez votre bilan gratuit</span><span class="ar">اطلبوا فحصكم المجاني</span></h2>
+      <p class="lead"><span class="fr">Remplissez ces quatre champs : WhatsApp s'ouvre avec votre demande déjà écrite, il ne reste qu'à appuyer sur Envoyer.</span><span class="ar">املؤوا هذه الخانات الأربع: يفتح واتساب برسالتكم جاهزة، ويكفي الضغط على إرسال.</span></p>
+      <p class="big-phone" id="phone-display">+212 6 57 04 80 71</p>
+      <ul>
+        <li><strong><span class="fr">Horaires</span><span class="ar">أوقات العمل</span></strong> · <span class="fr">lundi au samedi, 8h30 – 19h00</span><span class="ar">من الاثنين إلى السبت، 8:30 – 19:00</span></li>
+        <li><strong><span class="fr">Zone</span><span class="ar">المنطقة</span></strong> · <span class="fr">Marrakech</span><span class="ar">مراكش و  والنواحي</span></li>
+      </ul>
+    </div>
+
+    <form class="card" id="form" novalidate>
+      <div class="field">
+        <label for="f-school"><span class="fr">Nom de l'école</span><span class="ar">اسم المدرسة</span></label>
+        <input id="f-school" name="school" autocomplete="organization" required data-ph-fr="Ex. Groupe scolaire Al Amal" data-ph-ar="مثال: مجموعة مدارس الأمل" placeholder="Ex. Groupe scolaire Al Amal">
+        <span class="err" data-err="school"></span>
+      </div>
+      <div class="row2">
+        <div class="field">
+          <label for="f-city"><span class="fr">Ville</span><span class="ar">المدينة</span></label>
+          <input id="f-city" name="city" list="cities" autocomplete="address-level2" required data-ph-fr="Marrakech" data-ph-ar="مراكش" placeholder="Marrakech">
+          <datalist id="cities"><option value="Marrakech"><option value="Tahannaout"><option value="Aït Ourir"><option value="Amizmiz"><option value="Asni"><option value="Tameslouht"></datalist>
+          <span class="err" data-err="city"></span>
+        </div>
+        <div class="field">
+          <label for="f-count"><span class="fr">Nombre de projecteurs</span><span class="ar">عدد أجهزة العرض</span></label>
+          <input id="f-count" name="count" type="number" inputmode="numeric" min="1" max="500" required placeholder="12">
+          <span class="err" data-err="count"></span>
+        </div>
+      </div>
+      <div class="field">
+        <label for="f-phone"><span class="fr">Téléphone</span><span class="ar">رقم الهاتف</span></label>
+        <input id="f-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required placeholder="06 12 34 56 78" dir="ltr">
+        <span class="err" data-err="phone"></span>
+      </div>
+      <div class="field">
+        <label for="f-msg"><span class="fr">Un détail à ajouter ? (facultatif)</span><span class="ar">ملاحظة إضافية؟ (اختياري)</span></label>
+        <textarea id="f-msg" name="msg" data-ph-fr="Ex. deux projecteurs ont le voyant lampe rouge" data-ph-ar="مثال: جهازان ضوء المصباح فيهما أحمر" placeholder="Ex. deux projecteurs ont le voyant lampe rouge"></textarea>
+      </div>
+      <button class="btn btn-wa" type="submit"><svg><use href="#i-wa"/></svg><span class="fr">Envoyer ma demande sur WhatsApp</span><span class="ar">إرسال الطلب عبر واتساب</span></button>
+      <div class="form-ready" id="form-ready" hidden>
+        <p><span class="fr">Votre message est prêt. Si WhatsApp ne s'est pas ouvert, appuyez ici :</span><span class="ar">رسالتكم جاهزة. إذا لم يفتح واتساب، اضغطوا هنا:</span></p>
+        <a class="btn btn-wa btn-sm" id="form-link" href="https://wa.me/212657048071" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg><span class="fr">Ouvrir WhatsApp</span><span class="ar">فتح واتساب</span></a>
+      </div>
+    </form>
+  </div>
+</section>
+</main>
+
+<!-- 10. Pied de page -->
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <h3>ProjoClair École</h3>
+        <p><span class="fr">Maintenance et lampes de vidéoprojecteurs Epson pour les écoles.</span><span class="ar">صيانة ومصابيح أجهزة العرض إبسون للمدارس.</span></p>
+      </div>
+      <div>
+        <h3><span class="fr">Zone d'intervention</span><span class="ar">منطقة التدخل</span></h3>
+        <p><span class="fr">Marrakech, autres villes sur demande</span><span class="ar">مراكش، مدن أخرى عند الطلب</span></p>
+      </div>
+      <div>
+        <h3><span class="fr">Téléphone / WhatsApp</span><span class="ar">الهاتف / واتساب</span></h3>
+        <p class="ltr">+212 6 57 04 80 71</p>
+      </div>
+      <div>
+        <h3><span class="fr">Horaires</span><span class="ar">أوقات العمل</span></h3>
+        <p><span class="fr">Lundi – samedi</span><span class="ar">الاثنين – السبت</span></p>
+        <p class="ltr">8:30 – 19:00</p>
+      </div>
+    </div>
+    <p class="copy">© <span id="year">2026</span> ProjoClair École · <span class="fr">Epson est une marque de Seiko Epson Corporation. ProjoClair est un prestataire indépendant.</span><span class="ar">Epson علامة تجارية لشركة Seiko Epson. ProjoClair مقدم خدمات مستقل.</span></p>
+  </div>
+</footer>
+
+<a class="fab" data-wa="general" href="https://wa.me/212657048071" target="_blank" rel="noopener" aria-label="WhatsApp"><svg><use href="#i-wa"/></svg></a>
+
+<script>
+/* ================================================================
+   RÉGLAGES — modifiez ici vos prix, votre numéro et vos références.
+   ================================================================ */
+const CONFIG = {
+  whatsapp: "212657048071",          // numéro au format international, sans + ni espaces
+  priceCleaning: 150,                // nettoyage, DH par projecteur
+  priceLamp: 650,                    // lampe posée, prix d'appel en DH
+  priceContract: 300,                // contrat, DH par projecteur et par an
+  lampWarrantyMonths: 6,
+  contractDiscounts: [               // remise selon le nombre de projecteurs (mettre [] pour aucune)
+    { min: 25, pct: 15 },
+    { min: 10, pct: 10 },
+  ],
+  // Écoles clientes (avec leur accord) : ["École Al Amal", "Groupe scolaire Ibn Sina"]
+  references: [],
+  // Témoignages (avec accord) : { fr: "…", ar: "…", who: "Directrice, École …, Marrakech" }
+  testimonials: [],
+};
+
+/* Lampes : mettez un prix (en DH) dans "price" pour l'afficher, sinon le bouton « Demander le prix » apparaît. */
+const LAMPS = [
+  { lamp: "ELPLP96", price: null, models: ["EB-S41","EB-X41","EB-W41","EB-W42","EB-U42","EB-S39","EB-X39","EB-W39","EB-S05","EB-X05","EB-W05","EB-U05"] },
+  { lamp: "ELPLP97", price: null, models: ["EB-E01","EB-E10","EB-E20","EB-X06","EB-W06","EB-FH06","EB-X49","EB-W49"] },
+  { lamp: "ELPLP88", price: null, models: ["EB-S04","EB-X04","EB-W04","EB-S27","EB-X27","EB-W28","EB-W29","EB-S31","EB-X31","EB-W31","EB-W32","EB-X36","EB-97H","EB-98H"] },
+  { lamp: "ELPLP78", price: null, models: ["EB-S17","EB-S18","EB-X18","EB-W18","EB-X20","EB-X24","EB-X25","EB-W22","EB-S03","EB-X03","EB-W03","EB-945","EB-955W","EB-965","EB-98"] },
+  { lamp: "ELPLP67", price: null, models: ["EB-S11","EB-X11","EB-S12","EB-X12","EB-W12","EB-X14","EB-X15","EB-W16","EB-S02","EB-X02","EB-W02"] },
+  { lamp: "ELPLP58", price: null, models: ["EB-S9","EB-X9","EB-W9","EB-S10","EB-X10","EB-W10","EB-S92","EB-X92"] },
+  { lamp: "ELPLP54", price: null, models: ["EB-S7","EB-X7","EB-W7","EB-S8","EB-X8","EB-W8"] },
+  { lamp: "ELPLP41", price: null, models: ["EB-S6","EB-X6","EMP-S5","EMP-X5","EMP-77"] },
+  { lamp: "ELPLP87", price: null, models: ["EB-520","EB-525W","EB-530","EB-535W","EB-536Wi"] },
+  { lamp: "ELPLP79", price: null, models: ["EB-570","EB-575W","EB-575Wi"] },
+  { lamp: "ELPLP80", price: null, models: ["EB-580","EB-585W","EB-585Wi","EB-595Wi"] },
+  { lamp: "ELPLP91", price: null, models: ["EB-670","EB-675W","EB-675Wi","EB-680","EB-685W","EB-685Wi","EB-695Wi"] },
+  { lamp: "ELPLP71", price: null, models: ["EB-470","EB-475W","EB-480","EB-485W"] },
+  { lamp: "ELPLP75", price: null, models: ["EB-1940W","EB-1945W","EB-1950","EB-1955","EB-1960","EB-1965"] },
+];
+/* Modèles laser : pas de lampe à changer. */
+const LASER = ["EB-L200F","EB-L200W","EB-L210W","EB-L260F","EB-725W","EB-735F","EB-750F","EB-755F","EB-760W","EB-770F","EB-725Wi","EB-735Fi","EB-760Wi","EB-770Fi"];
+const POPULAR = ["EB-X41","EB-S41","EB-W42","EB-X05","EB-E01","EB-X31","EB-X18"];
+
+/* ================================================================ */
+
+const T = {
+  fr: {
+    wa_general: "Bonjour, je vous contacte depuis votre site au sujet des vidéoprojecteurs de notre école.",
+    wa_lamp: (m, l) => `Bonjour, je cherche la lampe ${l} pour un projecteur Epson ${m}. Quel est le prix et le délai ?`,
+    wa_laser: m => `Bonjour, nous avons un projecteur Epson ${m} (laser). Pouvez-vous l'entretenir ?`,
+    wa_unknown: q => `Bonjour, je cherche une lampe pour un projecteur Epson ${q}. Je vous envoie une photo de l'étiquette.`,
+    wa_diag: s => `Bonjour, un de nos projecteurs a ce problème : ${s}. Pouvez-vous passer faire un bilan ?`,
+    wa_calc: (n, t) => `Bonjour, je voudrais un devis pour un contrat de maintenance annuel pour ${n} projecteur(s) (estimation du site : ${t} DH/an).`,
+    wa_form: f => `Bonjour, je souhaite un bilan gratuit de nos vidéoprojecteurs.\n\nÉcole : ${f.school}\nVille : ${f.city}\nNombre de projecteurs : ${f.count}\nTéléphone : ${f.phone}` + (f.msg ? `\nPrécision : ${f.msg}` : ""),
+    lamp_for: "Lampe compatible",
+    ask_price: "Demander le prix",
+    order: "Commander",
+    dh: "DH",
+    posed: "posée et testée",
+    also_for: n => `Utilisée aussi par ${n} autre(s) modèle(s)`,
+    laser_title: "Projecteur laser : pas de lampe à changer",
+    laser_text: "La source laser dure environ 20 000 heures. Il faut quand même nettoyer le filtre et l'optique une à deux fois par an.",
+    laser_btn: "Demander un entretien",
+    not_found: q => `Nous n'avons pas encore « ${q} » dans la liste, mais nous trouvons la plupart des lampes Epson.`,
+    not_found_btn: "Envoyer la photo de l'étiquette",
+    type_more: "Tapez au moins 2 caractères du modèle.",
+    catalog: n => `Voir les ${n} modèles déjà référencés`,
+    per_year: "par an",
+    per_month: m => `soit environ ${m} DH par mois`,
+    per_proj: p => `${p} DH par projecteur`,
+    discount: p => ` · remise de ${p} % incluse`,
+    err_required: "Ce champ est nécessaire.",
+    err_phone: "Vérifiez le numéro, par exemple 06 12 34 56 78.",
+    err_count: "Indiquez un nombre entre 1 et 500.",
+    what_cause: "Cause probable",
+    what_fix: "Ce que nous faisons",
+    diag_btn: "Nous décrire ce problème",
+    diag_hint: "Choisissez un symptôme pour voir la cause probable.",
+  },
+  ar: {
+    wa_general: "السلام عليكم، أتواصل معكم من موقعكم بخصوص أجهزة العرض في مدرستنا.",
+    wa_lamp: (m, l) => `السلام عليكم، أبحث عن المصباح ${l} لجهاز إبسون ${m}. ما هو الثمن ومدة التوفير؟`,
+    wa_laser: m => `السلام عليكم، لدينا جهاز إبسون ${m} (ليزر). هل يمكنكم صيانته؟`,
+    wa_unknown: q => `السلام عليكم، أبحث عن مصباح لجهاز إبسون ${q}. سأرسل لكم صورة الملصق.`,
+    wa_diag: s => `السلام عليكم، أحد أجهزة العرض عندنا فيه هذا المشكل: ${s}. هل يمكنكم القيام بفحص؟`,
+    wa_calc: (n, t) => `السلام عليكم، أرغب في عرض أسعار لعقد صيانة سنوي لـ ${n} جهاز (تقدير الموقع: ${t} درهم في السنة).`,
+    wa_form: f => `السلام عليكم، أرغب في فحص مجاني لأجهزة العرض في مدرستنا.\n\nالمدرسة: ${f.school}\nالمدينة: ${f.city}\nعدد الأجهزة: ${f.count}\nالهاتف: ${f.phone}` + (f.msg ? `\nملاحظة: ${f.msg}` : ""),
+    lamp_for: "المصباح المناسب",
+    ask_price: "اسألوا عن الثمن",
+    order: "اطلبوا الآن",
+    dh: "درهم",
+    posed: "مع التركيب والاختبار",
+    also_for: n => `يستعمل أيضا في ${n} طرازات أخرى`,
+    laser_title: "جهاز ليزر: لا يحتاج إلى تغيير المصباح",
+    laser_text: "مصدر الليزر يدوم حوالي 20000 ساعة. لكن يجب تنظيف الفلتر والعدسة مرة أو مرتين في السنة.",
+    laser_btn: "اطلبوا الصيانة",
+    not_found: q => `الطراز «${q}» غير موجود بعد في القائمة، لكننا نوفر أغلب مصابيح إبسون.`,
+    not_found_btn: "أرسلوا صورة الملصق",
+    type_more: "اكتبوا حرفين على الأقل من الطراز.",
+    catalog: n => `عرض ${n} طرازا متوفرا في القائمة`,
+    per_year: "في السنة",
+    per_month: m => `أي حوالي ${m} درهم في الشهر`,
+    per_proj: p => `${p} درهم للجهاز`,
+    discount: p => ` · مع تخفيض ${p}٪`,
+    err_required: "هذه الخانة ضرورية.",
+    err_phone: "تحققوا من الرقم، مثلا 06 12 34 56 78.",
+    err_count: "أدخلوا عددا بين 1 و500.",
+    what_cause: "السبب المحتمل",
+    what_fix: "ما نقوم به",
+    diag_btn: "صفوا لنا هذا المشكل",
+    diag_hint: "اختاروا عرضا لمعرفة السبب المحتمل.",
+  },
+};
+
+const SYMPTOMS = [
+  { id: "red", fr: ["Voyant lampe rouge", "La lampe arrive en fin de vie : souvent entre 5 000 et 10 000 heures selon le modèle et le mode Eco.", "On lit le compteur d'heures et on remplace la lampe sur place si nécessaire."],
+               ar: ["ضوء المصباح أحمر", "المصباح وصل إلى نهاية عمره: عادة بين 5000 و10000 ساعة حسب الطراز ووضع Eco.", "نقرأ عداد الساعات ونستبدل المصباح في عين المكان إذا لزم الأمر."] },
+  { id: "dark", fr: ["Image sombre ou jaune", "Lampe usée, ou filtre à air encrassé par la poussière de craie.", "Nettoyage du filtre et de l'optique d'abord. On ne change la lampe que si c'est vraiment utile."],
+                ar: ["صورة باهتة أو صفراء", "مصباح مستهلك أو فلتر هواء متسخ بغبار الطباشير.", "ننظف الفلتر والعدسة أولا، ولا نغير المصباح إلا عند الضرورة."] },
+  { id: "off", fr: ["S'éteint en plein cours", "Surchauffe : filtre ou ventilateurs bouchés, souvent avec le voyant TEMP allumé.", "Dépoussiérage complet de l'intérieur et contrôle de la ventilation."],
+               ar: ["ينطفئ أثناء الحصة", "ارتفاع الحرارة: الفلتر أو المروحة مسدودة، وغالبا يشتعل ضوء TEMP.", "تنظيف داخلي كامل وفحص التهوية."] },
+  { id: "spots", fr: ["Taches ou couleurs bizarres", "Poussière déposée sur les panneaux LCD ou sur l'optique.", "Nettoyage du bloc optique avec le matériel adapté."],
+                 ar: ["بقع أو ألوان غريبة", "غبار على ألواح LCD أو على العدسات.", "تنظيف الجزء البصري بالأدوات المناسبة."] },
+  { id: "msg", fr: ["Message « Remplacez la lampe »", "Le compteur de la lampe a dépassé la durée prévue par Epson.", "Lampe neuve posée, compteur remis à zéro, test de luminosité."],
+               ar: ["رسالة «استبدل المصباح»", "عداد المصباح تجاوز المدة التي حددتها إبسون.", "تركيب مصباح جديد وإعادة العداد إلى الصفر واختبار الإضاءة."] },
+  { id: "noise", fr: ["Ventilateur bruyant", "La poussière s'accumule et le ventilateur force.", "Nettoyage et contrôle du ventilateur avant qu'il ne lâche."],
+                 ar: ["صوت المروحة مرتفع", "تراكم الغبار يجعل المروحة تعمل بجهد.", "تنظيف المروحة وفحصها قبل أن تتعطل."] },
+];
+
+let lang = "fr";
+let symptom = "red";
+const $ = s => document.querySelector(s);
+const $$ = s => [...document.querySelectorAll(s)];
+const fmt = n => Math.round(n).toLocaleString("fr-FR").replace(/ | /g, " ");
+const wa = msg => `https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(msg)}`;
+const esc = s => String(s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+const t = k => T[lang][k];
+const waIcon = '<svg><use href="#i-wa"/></svg>';
+const bulbIcon = '<svg><use href="#i-bulb"/></svg>';
+
+/* ---------- Lamp finder ---------- */
+const norm = s => s.toUpperCase().replace(/EPSON/g, "").replace(/[^A-Z0-9]/g, "").replace(/^(EB|EMP)/, "");
+const INDEX = [];
+LAMPS.forEach(l => l.models.forEach(m => INDEX.push({ model: m, key: norm(m), lamp: l })));
+LASER.forEach(m => INDEX.push({ model: m, key: norm(m), laser: true }));
+const v13 = l => "V13H010L" + l.replace("ELPLP", "");
+
+function findLamp(raw) {
+  const s = raw.toUpperCase().replace(/[^A-Z0-9]/g, "");
+  const m = s.match(/^(?:ELPLP|V13H010L|LP)(\d{2})$/);
+  return m ? LAMPS.find(l => l.lamp === "ELPLP" + m[1]) : null;
+}
+
+function search(raw) {
+  const q = norm(raw);
+  if (q.length < 2) return { short: true };
+  const lamp = findLamp(raw);
+  if (lamp) return { lampHit: lamp };
+  const exact = INDEX.filter(e => e.key === q);
+  const starts = INDEX.filter(e => e.key !== q && e.key.startsWith(q));
+  return { hits: [...exact, ...starts].slice(0, 6) };
+}
+
+function lampCard(model, l) {
+  const others = l.models.length - (model ? 1 : 0);
+  const priceHtml = l.price
+    ? `<div class="price">${fmt(l.price)} ${t("dh")} <small>${t("posed")}</small></div>`
+    : `<span></span>`;
+  const label = model || l.models.slice(0, 3).join(", ") + "…";
+  return `<article class="result">
+    <div class="result-top">
+      <span class="result-model mono">${esc(label)} <small>· ${t("also_for")(others)}</small></span>
+    </div>
+    <div class="result-lamp"><span class="bulb">${bulbIcon}</span>
+      <div><small style="color:#586276;font-size:.85rem">${t("lamp_for")}</small>
+      <div class="result-ref mono">${l.lamp}<small>${v13(l.lamp)}</small></div></div>
+    </div>
+    <div class="result-bottom">${priceHtml}
+      <a class="btn btn-wa btn-sm" target="_blank" rel="noopener" href="${wa(t("wa_lamp")(model || l.models[0], l.lamp))}">${waIcon}${l.price ? t("order") : t("ask_price")}</a>
+    </div>
+  </article>`;
+}
+
+function laserCard(model) {
+  return `<article class="result laser">
+    <div class="result-top"><span class="result-model mono">${esc(model)}</span></div>
+    <div class="result-lamp"><span class="bulb">${bulbIcon}</span>
+      <div><div style="font-weight:700">${t("laser_title")}</div><p style="color:#586276;font-size:.92rem">${t("laser_text")}</p></div></div>
+    <div class="result-bottom"><span></span><a class="btn btn-wa btn-sm" target="_blank" rel="noopener" href="${wa(t("wa_laser")(model))}">${waIcon}${t("laser_btn")}</a></div>
+  </article>`;
+}
+
+function renderResults() {
+  const raw = $("#q").value.trim();
+  const out = $("#results");
+  const r = search(raw);
+  if (r.short) { out.innerHTML = raw ? `<p class="finder-note">${t("type_more")}</p>` : ""; return; }
+  if (r.lampHit) { out.innerHTML = lampCard(null, r.lampHit); return; }
+  if (!r.hits.length) {
+    out.innerHTML = `<div class="empty"><p>${esc(t("not_found")(raw.toUpperCase()))}</p>
+      <a class="btn btn-wa btn-sm" style="justify-self:start" target="_blank" rel="noopener" href="${wa(t("wa_unknown")(raw.toUpperCase()))}">${waIcon}${t("not_found_btn")}</a></div>`;
+    return;
+  }
+  out.innerHTML = r.hits.map(h => h.laser ? laserCard(h.model) : lampCard(h.model, h.lamp)).join("");
+}
+
+function renderCatalog() {
+  const n = INDEX.length;
+  $("#catalog-sum").textContent = t("catalog")(n);
+  $("#catalog").innerHTML = LAMPS.map(l => `<div class="catalog-row"><b>${l.lamp}</b><div>${l.models.map(m => `<button type="button" data-model="${m}">${m}</button>`).join("")}</div></div>`).join("")
+    + `<div class="catalog-row"><b>LASER</b><div>${LASER.map(m => `<button type="button" data-model="${m}">${m}</button>`).join("")}</div></div>`;
+}
+
+function setQuery(m) {
+  $("#q").value = m;
+  renderResults();
+  $("#q").scrollIntoView({ block: "center", behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
+}
+
+/* ---------- Diagnosis ---------- */
+function renderDiag() {
+  $("#chips").innerHTML = SYMPTOMS.map(s => `<button type="button" class="chip" data-s="${s.id}" aria-pressed="${s.id === symptom}">${s[lang][0]}</button>`).join("");
+  const s = SYMPTOMS.find(x => x.id === symptom);
+  if (!s) { $("#diag-out").innerHTML = `<p>${t("diag_hint")}</p>`; return; }
+  const [name, cause, fix] = s[lang];
+  $("#diag-out").innerHTML = `<dl><dt>${t("what_cause")}</dt><dd>${cause}</dd><dt>${t("what_fix")}</dt><dd>${fix}</dd></dl>
+    <a class="btn btn-wa btn-sm" style="justify-self:start" target="_blank" rel="noopener" href="${wa(t("wa_diag")(name))}">${waIcon}${t("diag_btn")}</a>`;
+}
+
+/* ---------- Contract calculator ---------- */
+function contract(n) {
+  const d = [...CONFIG.contractDiscounts].sort((a, b) => b.min - a.min).find(x => n >= x.min);
+  const pct = d ? d.pct : 0;
+  const per = CONFIG.priceContract * (1 - pct / 100);
+  return { pct, per, total: Math.round(per * n) };
+}
+function renderCalc() {
+  const n = +$("#n").value;
+  const c = contract(n);
+  $("#n-out").textContent = n;
+  $("#calc-year").textContent = `${fmt(c.total)} ${t("dh")} ${t("per_year")}`;
+  $("#calc-detail").textContent = `${t("per_month")(fmt(c.total / 12))} · ${t("per_proj")(fmt(c.per))}${c.pct ? t("discount")(c.pct) : ""}`;
+  $("#calc-wa").href = wa(t("wa_calc")(n, fmt(c.total)));
+}
+
+/* ---------- Form ---------- */
+function validate(f) {
+  const errs = {};
+  if (!f.school) errs.school = t("err_required");
+  if (!f.city) errs.city = t("err_required");
+  const n = parseInt(f.count, 10);
+  if (!f.count) errs.count = t("err_required"); else if (!(n >= 1 && n <= 500)) errs.count = t("err_count");
+  const digits = f.phone.replace(/\D/g, "");
+  if (!f.phone) errs.phone = t("err_required"); else if (digits.length < 9 || digits.length > 13) errs.phone = t("err_phone");
+  return errs;
+}
+$("#form").addEventListener("submit", e => {
+  e.preventDefault();
+  const fd = new FormData(e.target);
+  const f = Object.fromEntries([...fd.entries()].map(([k, v]) => [k, String(v).trim()]));
+  const errs = validate(f);
+  $$("[data-err]").forEach(el => { el.textContent = errs[el.dataset.err] || ""; });
+  ["school", "city", "count", "phone"].forEach(k => e.target.elements[k].setAttribute("aria-invalid", errs[k] ? "true" : "false"));
+  const first = Object.keys(errs)[0];
+  if (first) { e.target.elements[first].focus(); return; }
+  const link = wa(t("wa_form")(f));
+  $("#form-link").href = link;
+  $("#form-ready").hidden = false;
+  const w = window.open(link, "_blank", "noopener");
+  if (!w) $("#form-link").focus();
+});
+
+/* ---------- References (filled from CONFIG when available) ---------- */
+function renderRefs() {
+  if (CONFIG.references.length) {
+    $("#logos").hidden = false;
+    $("#logos").innerHTML = CONFIG.references.map(r => `<span>${esc(r)}</span>`).join("");
+  }
+  if (CONFIG.testimonials.length) {
+    $("#testimonials").hidden = false;
+    $("#testimonials").innerHTML = CONFIG.testimonials.map(q => `<blockquote class="quote"><p>« ${esc(q[lang] || q.fr)} »</p><footer>${esc(q.who)}</footer></blockquote>`).join("");
+  }
+}
+
+/* ---------- Language ---------- */
+function setLang(l, save = true) {
+  lang = l === "ar" ? "ar" : "fr";
+  const root = document.documentElement;
+  root.lang = lang;
+  root.dir = lang === "ar" ? "rtl" : "ltr";
+  $$(".lang button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.lang === lang)));
+  $$("[data-ph-fr]").forEach(el => { el.placeholder = el.dataset["ph" + (lang === "ar" ? "Ar" : "Fr")]; });
+  $$("[data-wa=general]").forEach(a => { a.href = wa(t("wa_general")); });
+  if (save) { try { localStorage.setItem("projoclair-lang", lang); } catch (e) {} }
+  renderDiag(); renderResults(); renderCatalog(); renderCalc(); renderRefs();
+}
+
+/* ---------- Wiring ---------- */
+$$("[data-cfg]").forEach(el => { const v = CONFIG[el.dataset.cfg]; if (v != null) el.textContent = typeof v === "number" ? fmt(v) : v; });
+$("#year").textContent = new Date().getFullYear();
+$("#quick").insertAdjacentHTML("beforeend", POPULAR.map(m => `<button type="button" data-model="${m}">${m}</button>`).join(""));
+document.addEventListener("click", e => {
+  const lb = e.target.closest(".lang button"); if (lb) { setLang(lb.dataset.lang); return; }
+  const mb = e.target.closest("[data-model]"); if (mb) { setQuery(mb.dataset.model); return; }
+  const ch = e.target.closest(".chip"); if (ch) { symptom = ch.dataset.s; renderDiag(); return; }
+  if (e.target.closest("[data-bilan]")) setTimeout(() => $("#f-school").focus({ preventScroll: true }), 450);
+});
+$("#q").addEventListener("input", renderResults);
+$("#n").addEventListener("input", renderCalc);
+
+let initial = "fr";
+try {
+  const p = new URLSearchParams(location.search).get("lang");
+  const saved = localStorage.getItem("projoclair-lang");
+  initial = p || saved || ((navigator.language || "").startsWith("ar") ? "ar" : "fr");
+} catch (e) {}
+setLang(initial, false);
+</script>
+</body>
+</html>
