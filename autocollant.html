@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Étiquettes d'entretien ProjoClair</title>
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,800&family=Readex+Pro:wght@400;700&family=JetBrains+Mono:wght@500&display=swap">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<style>
+/* Planche A4 de 12 étiquettes (63 × 70 mm) à coller sur chaque projecteur entretenu. */
+:root { --ink: #0f1724; --lamp: #ffb020; --muted: #586276; color-scheme: light; }
+* { box-sizing: border-box; }
+body { margin: 0; background: #e9ebef; color: var(--ink); font: 400 15px/1.5 "Readex Pro", system-ui, sans-serif; }
+.controls { max-width: 210mm; margin: 0 auto; padding: 20px 16px; display: grid; gap: 12px; }
+.controls h1 { font: 800 1.4rem "Bricolage Grotesque", sans-serif; margin: 0; }
+.controls label { display: grid; gap: 4px; font-weight: 700; }
+.controls input { min-height: 46px; padding: 8px 12px; border: 1.5px solid #c9ced8; border-radius: 10px; font: 500 1rem "JetBrains Mono", monospace; }
+.controls .row { display: flex; flex-wrap: wrap; gap: 10px; }
+.controls button { min-height: 46px; padding: 8px 20px; border: 0; border-radius: 999px; background: var(--ink); color: #fff; font: 700 1rem "Readex Pro", sans-serif; cursor: pointer; }
+.controls button.alt { background: var(--lamp); color: #1d1300; }
+.controls p { margin: 0; color: var(--muted); font-size: .9rem; }
+.sheet { width: 210mm; min-height: 297mm; margin: 0 auto 32px; background: #fff; padding: 8mm 7.5mm; display: grid; grid-template-columns: repeat(3, 63mm); grid-auto-rows: 70mm; gap: 0 3mm; align-content: start; }
+.tag { border: 0.3mm dashed #c4c9d2; border-radius: 3mm; padding: 4mm; display: grid; grid-template-rows: auto auto 1fr auto; gap: 1.5mm; justify-items: center; text-align: center; overflow: hidden; }
+.brand { font: 800 4.2mm/1 "Bricolage Grotesque", sans-serif; }
+.brand b { color: #c47c00; }
+.cta { font: 700 3.3mm/1.25 "Readex Pro", sans-serif; }
+.cta span { display: block; font-weight: 400; direction: rtl; }
+.qr { width: 30mm; height: 30mm; }
+.qr img, .qr canvas { width: 100% !important; height: 100% !important; }
+.fields { width: 100%; font: 500 2.6mm/1.6 "JetBrains Mono", monospace; text-align: start; border-top: 0.3mm solid #e2e5ea; padding-top: 1.5mm; }
+.fields div { display: flex; justify-content: space-between; gap: 2mm; }
+.phone { font-weight: 700; }
+@media screen and (max-width: 820px) { .sheet { transform-origin: top left; zoom: .45; } }
+@media print {
+  @page { size: A4; margin: 0; }
+  body { background: #fff; }
+  .controls { display: none; }
+  .sheet { margin: 0; }
+}
+</style>
+</head>
+<body>
+<div class="controls">
+  <h1>Étiquettes « Entretien : scannez-moi »</h1>
+  <label for="url">Adresse de votre site
+    <input id="url" value="https://projoclairecole.vercel.app" spellcheck="false">
+  </label>
+  <div class="row">
+    <button type="button" id="gen">Mettre à jour les QR codes</button>
+    <button type="button" class="alt" onclick="window.print()">Imprimer la planche A4</button>
+  </div>
+  <p>Imprimez sur papier autocollant A4 (idéalement vinyle, qui résiste à la chaleur du projecteur). Collez l'étiquette sur le côté ou le dessus, jamais sur les grilles d'aération. Notez la date au feutre indélébile.</p>
+</div>
+<div class="sheet" id="sheet"></div>
+<script>
+const PHONE = "06 57 04 80 71";
+function build() {
+  const base = document.getElementById("url").value.trim() || "https://projoclairecole.vercel.app";
+  const link = base + (base.includes("?") ? "&" : "?") + "src=etiquette";
+  const sheet = document.getElementById("sheet");
+  sheet.innerHTML = "";
+  for (let i = 0; i < 12; i++) {
+    const tag = document.createElement("div");
+    tag.className = "tag";
+    tag.innerHTML = `<div class="brand">ProjoClair <b>École</b></div>
+      <div class="cta">Entretien : scannez-moi<span>صيانة: امسحوا الرمز</span></div>
+      <div class="qr"></div>
+      <div class="fields">
+        <div><span>Entretien le</span><span>__/__/____</span></div>
+        <div><span>Prochain</span><span>__/__/____</span></div>
+        <div><span>WhatsApp</span><span class="phone">${PHONE}</span></div>
+      </div>`;
+    sheet.appendChild(tag);
+    new QRCode(tag.querySelector(".qr"), { text: link, width: 256, height: 256, correctLevel: QRCode.CorrectLevel.M });
+  }
+}
+document.getElementById("gen").addEventListener("click", build);
+build();
+</script>
+</body>
+</html>
