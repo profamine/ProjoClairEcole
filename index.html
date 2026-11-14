@@ -1,23 +1,30 @@
 <!doctype html>
-<html lang="fr" dir="ltr">
+<html lang="fr" dir="ltr" data-page-lang="fr">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>ProjoClair École — Lampes et maintenance de vidéoprojecteurs Epson à Marrakech</title>
-<meta name="description" content="Maintenance, nettoyage et lampes de vidéoprojecteurs Epson pour les écoles de Marrakech. Bilan gratuit, intervention sous 48 h, facture fournie. صيانة ومصابيح أجهزة العرض إبسون للمدارس.">
-<meta name="theme-color" content="#0f1724">
+<!-- seo:start (remplacé dans ar/index.html par tools/build-ar.mjs) -->
+<title>Réparation et lampes de vidéoprojecteurs à Marrakech | ProjoClair École</title>
+<meta name="description" content="Réparation, nettoyage et lampes de vidéoprojecteurs (data show) Epson pour les écoles de Marrakech. Bilan gratuit, intervention sous 48 h, facture. WhatsApp 06 57 04 80 71.">
 <link rel="canonical" href="https://www.projoclairecole.online/">
-<link rel="icon" href="favicon.svg" type="image/svg+xml">
-<link rel="apple-touch-icon" href="apple-touch-icon.png">
-<meta property="og:title" content="ProjoClair École — Vidéoprojecteurs Epson pour les écoles">
-<meta property="og:description" content="Bilan gratuit, nettoyage, lampes Epson et contrat annuel. Marrakech.">
-<meta property="og:type" content="website">
+<meta property="og:title" content="Réparation et lampes de vidéoprojecteurs à Marrakech | ProjoClair École">
+<meta property="og:description" content="Bilan gratuit, nettoyage, lampes Epson et contrat annuel pour les écoles de Marrakech.">
 <meta property="og:url" content="https://www.projoclairecole.online/">
+<meta property="og:locale" content="fr_MA">
+<meta property="og:locale:alternate" content="ar_MA">
+<!-- seo:end -->
+<link rel="alternate" hreflang="fr" href="https://www.projoclairecole.online/">
+<link rel="alternate" hreflang="ar" href="https://www.projoclairecole.online/ar/">
+<link rel="alternate" hreflang="x-default" href="https://www.projoclairecole.online/">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#0f1724">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ProjoClair École">
 <meta property="og:image" content="https://www.projoclairecole.online/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:locale" content="fr_MA">
-<meta property="og:locale:alternate" content="ar_MA">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,15 +33,40 @@
 {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
+  "@id": "https://www.projoclairecole.online/#business",
   "name": "ProjoClair École",
-  "description": "Maintenance et lampes de vidéoprojecteurs Epson pour les écoles",
+  "alternateName": "ProjoClair",
+  "description": "Réparation, nettoyage, maintenance et lampes de vidéoprojecteurs Epson pour les écoles de Marrakech.",
   "url": "https://www.projoclairecole.online/",
+  "logo": "https://www.projoclairecole.online/apple-touch-icon.png",
   "image": "https://www.projoclairecole.online/og-image.png",
   "telephone": "+212657048071",
-  "areaServed": ["Marrakech"],
-  "address": {"@type": "PostalAddress", "addressLocality": "Marrakech", "addressCountry": "MA"},
-  "openingHours": "Mo-Sa 08:30-19:00",
-  "priceRange": "DH"
+  "email": "projoclairecole@gmail.com",
+  "address": {"@type": "PostalAddress", "addressLocality": "Marrakech", "addressRegion": "Marrakech-Safi", "addressCountry": "MA"},
+  "geo": {"@type": "GeoCoordinates", "latitude": 31.6295, "longitude": -7.9811},
+  "areaServed": [
+    {"@type": "City", "name": "Marrakech"},
+    {"@type": "AdministrativeArea", "name": "Préfecture de Marrakech"},
+    {"@type": "AdministrativeArea", "name": "Province d'Al Haouz"}
+  ],
+  "openingHoursSpecification": [{
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+    "opens": "08:30", "closes": "19:00"
+  }],
+  "knowsLanguage": ["fr", "ar"],
+  "currenciesAccepted": "MAD",
+  "priceRange": "0–650 MAD",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Services vidéoprojecteurs",
+    "itemListElement": [
+      {"@type": "Offer", "price": "0", "priceCurrency": "MAD", "itemOffered": {"@type": "Service", "name": "Bilan gratuit des vidéoprojecteurs de l'école"}},
+      {"@type": "Offer", "price": "150", "priceCurrency": "MAD", "itemOffered": {"@type": "Service", "name": "Nettoyage complet d'un vidéoprojecteur"}},
+      {"@type": "Offer", "priceSpecification": {"@type": "PriceSpecification", "minPrice": "650", "priceCurrency": "MAD"}, "itemOffered": {"@type": "Service", "name": "Remplacement de lampe de vidéoprojecteur Epson, pose comprise"}},
+      {"@type": "Offer", "price": "300", "priceCurrency": "MAD", "itemOffered": {"@type": "Service", "name": "Contrat de maintenance annuel, par vidéoprojecteur"}}
+    ]
+  }
 }
 </script>
 <style>
@@ -249,6 +281,15 @@ html[lang="ar"] .service .tag { font-family: var(--f-body); letter-spacing: 0; f
 .result.laser .bulb { background: #e3f6ea; color: #12823f; }
 .empty { background: #ffffff0d; border: 1px dashed #ffffff33; border-radius: 14px; padding: 18px; display: grid; gap: 12px; color: var(--on-ink); }
 .finder-note { font-size: .88rem; color: var(--on-ink-muted); }
+.faq { display: grid; gap: 10px; max-width: 820px; }
+.faq details { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); padding: 4px 18px; }
+.faq summary { cursor: pointer; min-height: 52px; display: flex; align-items: center; font-weight: 600; font-size: 1.05rem; list-style: none; gap: 12px; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: "+"; margin-inline-start: auto; font: 700 1.3rem var(--f-mono); color: var(--lamp-deep); }
+.faq details[open] summary::after { content: "–"; }
+.faq details p { color: var(--muted); padding-bottom: 16px; margin: 0; }
+.foot-links { display: flex; flex-wrap: wrap; gap: 6px 18px; margin-top: 10px; }
+.foot-links a { color: inherit; }
 .catalog summary { cursor: pointer; color: var(--lamp); font-weight: 600; min-height: 44px; display: flex; align-items: center; }
 .catalog-list { display: grid; gap: 14px; margin-top: 10px; }
 .catalog-row { display: grid; gap: 6px; }
@@ -400,8 +441,8 @@ html[dir="rtl"] .fab { inset-inline-end: max(18px, env(safe-area-inset-left, 0px
     <div>
       <p class="eyebrow"><span class="fr">Marrakech</span><span class="ar">مراكش</span></p>
       <h1>
-        <span class="fr">Maintenance et lampes de vidéoprojecteurs <em>Epson</em> pour les écoles</span>
-        <span class="ar">صيانة ومصابيح أجهزة العرض <em>إبسون</em> للمدارس</span>
+        <span class="fr">Réparation et lampes de vidéoprojecteurs <em>Epson</em> pour les écoles</span>
+        <span class="ar">إصلاح ومصابيح أجهزة العرض <em>إبسون</em> للمدارس</span>
       </h1>
       <p class="hero-sub">
         <span class="fr">Une image nette dans chaque classe. Nous nettoyons, réparons et changeons les lampes sur place, avec facture.</span>
@@ -669,6 +710,25 @@ html[dir="rtl"] .fab { inset-inline-end: max(18px, env(safe-area-inset-left, 0px
   </div>
 </section>
 
+<!-- 8 bis. Questions fréquentes -->
+<section class="section" id="faq">
+  <div class="wrap">
+    <div class="head">
+      <p class="eyebrow"><span class="fr">Questions fréquentes</span><span class="ar">أسئلة شائعة</span></p>
+      <h2 class="h2"><span class="fr">Vidéoprojecteurs en panne : vos questions</span><span class="ar">أجهزة العرض المعطلة: أسئلتكم</span></h2>
+    </div>
+    <div class="faq">
+      <details><summary><span class="fr">Combien coûte une lampe de vidéoprojecteur à Marrakech ?</span><span class="ar">كم يكلف مصباح جهاز العرض في مراكش؟</span></summary><p><span class="fr">À partir de 650 DH la lampe posée et testée, selon le modèle. Nous vérifions la référence avec vous et donnons le prix exact dans le devis. Les lampes sont garanties 6 mois.</span><span class="ar">ابتداء من 650 درهم للمصباح مع التركيب والاختبار، حسب الطراز. نتأكد معكم من المرجعية ونعطيكم الثمن المضبوط في عرض الأسعار. المصابيح مضمونة 6 أشهر.</span></p></details>
+      <details><summary><span class="fr">Pourquoi le voyant LAMP de mon projecteur Epson clignote en rouge ?</span><span class="ar">لماذا يومض ضوء LAMP بالأحمر في جهاز إبسون؟</span></summary><p><span class="fr">Le plus souvent, la lampe a dépassé sa durée de vie ou elle est grillée. Si c'est le voyant TEMP, le projecteur chauffe trop, en général à cause d'un filtre encrassé. Pendant le bilan gratuit, nous relevons les heures de lampe et trouvons la cause.</span><span class="ar">في الغالب انتهى عمر المصباح أو احترق. إذا كان الضوء TEMP فالجهاز يسخن كثيرا، عادة بسبب فلتر متسخ. خلال الفحص المجاني نسجل ساعات المصباح ونحدد السبب.</span></p></details>
+      <details><summary><span class="fr">L'image est sombre ou jaune : faut-il changer la lampe ?</span><span class="ar">الصورة باهتة أو صفراء: هل يجب تغيير المصباح؟</span></summary><p><span class="fr">Pas toujours. La poussière de craie encrasse le filtre et l'optique et rend l'image terne. Un nettoyage complet (150 DH par projecteur) suffit souvent à retrouver une image nette.</span><span class="ar">ليس دائما. غبار الطباشير يوسخ الفلتر والعدسة فتصبح الصورة باهتة. تنظيف كامل (150 درهم للجهاز) يكفي غالبا لاسترجاع صورة واضحة.</span></p></details>
+      <details><summary><span class="fr">Le bilan des vidéoprojecteurs est-il vraiment gratuit ?</span><span class="ar">هل فحص أجهزة العرض مجاني فعلا؟</span></summary><p><span class="fr">Oui. Nous testons chaque projecteur salle par salle, relevons les heures de lampe et vous remettons un rapport avec un devis clair, sans engagement.</span><span class="ar">نعم. نختبر كل جهاز قسما بقسم، ونسجل ساعات المصباح، ونسلمكم تقريرا وعرض أسعار واضحا، بدون أي التزام.</span></p></details>
+      <details><summary><span class="fr">Réparez-vous les data show d'autres marques qu'Epson ?</span><span class="ar">هل تصلحون أجهزة الداتا شو من علامات أخرى غير إبسون؟</span></summary><p><span class="fr">Nous sommes spécialisés Epson, la marque la plus répandue dans les écoles. Pour une autre marque, envoyez une photo de l'étiquette sur WhatsApp : nous vous dirons franchement si nous pouvons intervenir.</span><span class="ar">نحن متخصصون في إبسون، العلامة الأكثر انتشارا في المدارس. بالنسبة لعلامة أخرى، أرسلوا صورة الملصق على واتساب وسنخبركم بصراحة إن كنا نستطيع التدخل.</span></p></details>
+      <details><summary><span class="fr">Dans quelles villes intervenez-vous ?</span><span class="ar">في أي مدن تتدخلون؟</span></summary><p><span class="fr">À Marrakech et dans les environs : Tahannaout, Aït Ourir, Tameslouht, Amizmiz, Asni. Les autres villes sont possibles sur demande.</span><span class="ar">في مراكش ونواحيها: تحناوت، أيت أورير، تامصلوحت، أمزميز، أسني. المدن الأخرى ممكنة عند الطلب.</span></p></details>
+      <details><summary><span class="fr">Quel est le délai d'intervention ? Fournissez-vous une facture ?</span><span class="ar">ما هي مدة التدخل؟ وهل تقدمون فاتورة؟</span></summary><p><span class="fr">Nous intervenons sous 48 h. Si une lampe doit être commandée, le délai est indiqué dans le devis. Chaque intervention donne lieu à une facture.</span><span class="ar">نتدخل خلال 48 ساعة. إذا كان المصباح يحتاج إلى طلبية، نذكر المدة في عرض الأسعار. كل تدخل تقدم معه فاتورة.</span></p></details>
+    </div>
+  </div>
+</section>
+
 <!-- 9. Contact -->
 <section class="contact section" id="contact">
   <div class="wrap contact-grid">
@@ -735,7 +795,8 @@ html[dir="rtl"] .fab { inset-inline-end: max(18px, env(safe-area-inset-left, 0px
       </div>
       <div>
         <h3><span class="fr">Téléphone / WhatsApp</span><span class="ar">الهاتف / واتساب</span></h3>
-        <p class="ltr">+212 6 57 04 80 71</p>
+        <p class="ltr"><a href="tel:+212657048071" style="color:inherit">+212 6 57 04 80 71</a></p>
+        <p class="ltr"><a href="mailto:projoclairecole@gmail.com" style="color:inherit">projoclairecole@gmail.com</a></p>
       </div>
       <div>
         <h3><span class="fr">Horaires</span><span class="ar">أوقات العمل</span></h3>
@@ -743,6 +804,7 @@ html[dir="rtl"] .fab { inset-inline-end: max(18px, env(safe-area-inset-left, 0px
         <p class="ltr">8:30 – 19:00</p>
       </div>
     </div>
+    <p class="foot-links"><a href="/" hreflang="fr" lang="fr">Version française</a><a href="/ar/" hreflang="ar" lang="ar">النسخة العربية</a><a href="#faq"><span class="fr">Questions fréquentes</span><span class="ar">أسئلة شائعة</span></a></p>
     <p class="copy">© <span id="year">2026</span> ProjoClair École · <span class="fr">Epson est une marque de Seiko Epson Corporation. ProjoClair est un prestataire indépendant.</span><span class="ar">Epson علامة تجارية لشركة Seiko Epson. ProjoClair مقدم خدمات مستقل.</span></p>
   </div>
 </footer>
@@ -1049,7 +1111,7 @@ $$("[data-cfg]").forEach(el => { const v = CONFIG[el.dataset.cfg]; if (v != null
 $("#year").textContent = new Date().getFullYear();
 $("#quick").insertAdjacentHTML("beforeend", POPULAR.map(m => `<button type="button" data-model="${m}">${m}</button>`).join(""));
 document.addEventListener("click", e => {
-  const lb = e.target.closest(".lang button"); if (lb) { setLang(lb.dataset.lang); return; }
+  const lb = e.target.closest(".lang button"); if (lb) { goLang(lb.dataset.lang); return; }
   const mb = e.target.closest("[data-model]"); if (mb) { setQuery(mb.dataset.model); return; }
   const ch = e.target.closest(".chip"); if (ch) { symptom = ch.dataset.s; renderDiag(); return; }
   if (e.target.closest("[data-bilan]")) setTimeout(() => $("#f-school").focus({ preventScroll: true }), 450);
@@ -1057,13 +1119,22 @@ document.addEventListener("click", e => {
 $("#q").addEventListener("input", renderResults);
 $("#n").addEventListener("input", renderCalc);
 
-let initial = "fr";
+/* Une adresse par langue : / en français, /ar/ en arabe (pour Google). */
+const PAGE_LANG = document.documentElement.dataset.pageLang === "ar" ? "ar" : "fr";
+const LANG_URL = { fr: "/", ar: "/ar/" };
+function goLang(l) {
+  try { localStorage.setItem("projoclair-lang", l); } catch (e) {}
+  if (l === PAGE_LANG) return setLang(l, false);
+  location.href = LANG_URL[l] + location.hash;
+}
 try {
+  // Anciens liens ?lang=ar et préférence enregistrée : redirection vers la bonne adresse.
   const p = new URLSearchParams(location.search).get("lang");
-  const saved = localStorage.getItem("projoclair-lang");
-  initial = p || saved || ((navigator.language || "").startsWith("ar") ? "ar" : "fr");
+  if (p === "ar" || p === "fr") localStorage.setItem("projoclair-lang", p);
+  const wanted = p || localStorage.getItem("projoclair-lang");
+  if ((wanted === "ar" || wanted === "fr") && wanted !== PAGE_LANG) location.replace(LANG_URL[wanted] + location.hash);
 } catch (e) {}
-setLang(initial, false);
+setLang(PAGE_LANG, false);
 </script>
 </body>
 </html>
